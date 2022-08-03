@@ -1,5 +1,7 @@
 import datetime
 import users as us
+
+
 def loging(text):
 
     now = datetime.datetime.now()
@@ -27,13 +29,15 @@ def view_log():
             loging(f'login: {login} password: {password_from_user} Complete!')
             print(('Доступ открыт.\n'
                    '________________\n'))
-            with open('log.txt', 'r',encoding='utf-16') as log:
+            with open('log.txt', 'r', encoding='utf-16') as log:
                 r = log.readlines()
                 for line in r:
                     print(line)
             loging(f'Пользователь {login} получил доступ к log')
         else:
-            loging(f'Пользователь {login} не получил доступ к log, неверный password:{password_from_user}')
+            loging(
+                f'Пользователь {login} не получил доступ к log, неверный password:{password_from_user}'
+            )
             print('Доступ закрыт!')
     else:
         print('Пользователь не найден.')
