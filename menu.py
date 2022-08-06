@@ -25,6 +25,7 @@ def menu_user():
         case '4': del_contact()
         case '5': view_workers()
 
+
 def add_contact():
     global id_number, name, type_doc, number_tel, department, type_worker, comment, all_workers
     
@@ -63,25 +64,36 @@ def edit_contact():
 def find_contact():
     finder = init_find()
     if finder.isdigit():
+        print(finder)
+        print(type(finder))
         id_to_name = fe.load_json('data_files\id_to_name.json')
-        try:
-            name = id_to_name.get(finder)
-            all_workers = fe.load_json()
-            return f'{name} : {all_workers.get(name)}'
-        except:
-            print('Пользователь не найден')
-            find_contact()
-
-    else:
+        name = id_to_name.get(finder)
         all_workers = fe.load_json()
-        try:
-            return f'{finder} : {all_workers.get(finder)}'
-        except:
+        
+        if name is None:
             print('Пользователь не найден')
-            find_contact()
+            if quit():
+                find_contact()
+            else:
+                exit()
+        else:
+            return f'{name} : {all_workers.get(name)}'
+        
+    else:
+        print(finder)
+        print(type(finder))
+        all_workers = fe.load_json()
+        if all_workers.get(finder) is None:
+            print('Пользователь не найден')
+            if quit():
+                find_contact()
+            else:
+                exit()
+        else:
+            return f'{finder} : {all_workers.get(finder)}'
         
         
-        
+# Просто ввод отдельной функцией
 def init_find():
     print('Введите Имя Фамилию или "id"')
     msg = input('>> ')
@@ -91,5 +103,14 @@ def view_workers():
     dict = fe.load_json('data_files\id_to_name.json')
     for i in dict.keys():
         print(f'{i}: {dict.get(i)}')
-    
-    
+        
+def quit():
+    print(('Продолжить поиск?\n'
+           '"y" или "n"'))
+    choice = input('>> ')
+    if choice == "y":
+        return True
+    elif choice == "n":
+        return False
+    else:
+        quit()
