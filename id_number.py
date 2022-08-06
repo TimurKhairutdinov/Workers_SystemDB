@@ -6,9 +6,7 @@ import files_editor as fe
 def get_id():
     global id_numbers
     id_numbers = fe.load_json('data_files\id_workers.json')
-    for i in range(1, 10000):
-        if id_numbers.count(i) == 0:
-            return i
+    return id_numbers[-1]+ 1
 
 
 def set_id():
