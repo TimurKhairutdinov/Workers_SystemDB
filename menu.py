@@ -37,9 +37,9 @@ def add_contact():
     comment = input('Введите комментарий >> ')
     id_number = id.set_id()
 
-    worker = [{'id_number': id_number, 'type_doc': type_doc,
+    worker = {'id_number': id_number, 'type_doc': type_doc,
                'number_tel': number_tel, 'department': department,
-               'type_worker': type_worker, 'comment': comment}]
+               'type_worker': type_worker, 'comment': comment}
     
     id_to_name = fe.load_json('data_files\id_to_name.json')
     id_to_name[id_number] = name
@@ -50,22 +50,35 @@ def add_contact():
 
 
 def del_contact():
-    print('Введите Имя Фамилию, если вы хотите удалить по id, введите "id"')
-    name = input('>> ')
+    contact = find_contact() # tuple (name or id, contact, flag) 3 Элемента
     all_workers = fe.load_json()
-    all_workers.pop(name)
+    id_to_name = fe.load_json('data_files\id_to_name.json')
+    name = contact[0]
+    worker = all_workers.get(name)  
+    # worker = [{'id_number': id_number, 'type_doc': type_doc,
+    #            'number_tel': number_tel, 'department': department,
+    #            'type_worker': type_worker, 'comment': comment}]  
+    id = worker.get('id_number')
+    id_to_name.pop(f'{id}')
+    all_workers.pop(f'{name}')
+    fe.save_json(id_to_name,'data_files\id_to_name.json')
     fe.save_json(all_workers)
-
+    print(f'Удалён: {contact}')
+    
 
 def edit_contact():
-    return 0
-
+    contact = find_contact()
+    all_workers = fe.load_json()
+    id_to_name = fe.load_json('data_files\id_to_name.json') 
+    name = contact[0] 
+    worker = all_workers.get(name)
+    print(name)
+    print(worker)
+    print(worker.get('id_number'))
 
 def find_contact():
     finder = init_find()
     if finder.isdigit():
-        print(finder)
-        print(type(finder))
         id_to_name = fe.load_json('data_files\id_to_name.json')
         name = id_to_name.get(finder)
         all_workers = fe.load_json()
@@ -77,11 +90,11 @@ def find_contact():
             else:
                 exit()
         else:
-            return f'{name} : {all_workers.get(name)}'
+            flag = 1
+            return (name, all_workers.get(name), flag)
+            # return f'{name} : {all_workers.get(name)}'
         
     else:
-        print(finder)
-        print(type(finder))
         all_workers = fe.load_json()
         if all_workers.get(finder) is None:
             print('Пользователь не найден')
@@ -90,7 +103,9 @@ def find_contact():
             else:
                 exit()
         else:
-            return f'{finder} : {all_workers.get(finder)}'
+            flag = 0
+            return (finder, all_workers.get(finder), flag)
+            # return f'{finder} : {all_workers.get(finder)}'
         
         
 # Просто ввод отдельной функцией
