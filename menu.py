@@ -70,12 +70,31 @@ def edit_contact():
     contact = find_contact()
     all_workers = fe.load_json()
     id_to_name = fe.load_json('data_files\id_to_name.json') 
-    name = contact[0] 
+    
+    name = contact[0]
     worker = all_workers.get(name)
-    print(name)
-    print(worker)
-    print(worker.get('id_number'))
-
+    new_name = input(f'Изменить: {name} : >> ')
+    type_doc = input(f'Изменить: {worker.get("type_doc")} : >> ')
+    number_tel = input(f'Изменить: {worker.get("number_tel")} : >> ')
+    department = input(f'Изменить: {worker.get("department")} : >> ')
+    type_worker = input(f'Изменить: {worker.get("type_worker")} : >> ')
+    comment = input(f'Изменить: {worker.get("comment")} : >> ')
+    id_number = worker.get('id_number')
+    
+    new_worker = {'id_number': id_number, 'type_doc': type_doc,
+               'number_tel': number_tel, 'department': department,
+               'type_worker': type_worker, 'comment': comment}
+    
+    all_workers.pop(name)
+    all_workers[f'{new_name}'] = new_worker
+    id_to_name[f'{worker.get("id_number")}'] = new_name
+    
+    fe.save_json(all_workers)
+    fe.save_json(id_to_name, 'data_files\id_to_name.json')
+    print(all_workers)
+    print(id_to_name)
+    
+    
 def find_contact():
     finder = init_find()
     if finder.isdigit():
