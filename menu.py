@@ -8,9 +8,9 @@ def menu_admin():
 
 
 def menu_user():
-    print('База данных')
+    print('База данных предприятия')
     choice = input(
-        'Для работы, введите номер пункта меню.\n'
+        'Для управления, введите номер пункта меню.\n'
         '1. Добавить. \n'
         '2. Поиск. \n'
         '3. Изменить. \n'
@@ -19,13 +19,13 @@ def menu_user():
         '>> ')
     
     match choice:
-        case '1': add_contact()
+        case '1': add_contact(), log.debug("Это сообщение для отладки программы")
         case '2': print(find_contact())
         case '3': edit_contact()
         case '4': del_contact()
         case '5': view_workers()
 
-
+# Добавление нового работника
 def add_contact():
     global id_number, name, type_doc, number_tel, department, type_worker, comment, all_workers
     
@@ -35,16 +35,20 @@ def add_contact():
     department = input('Введите отдел >> ')
     type_worker = input('Введите должность >> ')
     comment = input('Введите комментарий >> ')
-    id_number = id.set_id()
+    id_number = id.set_id() 
 
     worker = {'id_number': id_number, 'type_doc': type_doc,
                'number_tel': number_tel, 'department': department,
                'type_worker': type_worker, 'comment': comment}
     
     id_to_name = fe.load_json('data_files\id_to_name.json')
+    
+    # Привязка id к name
     id_to_name[id_number] = name
     fe.save_json(id_to_name,'data_files\id_to_name.json')
     all_workers = fe.load_json()
+    
+    # Сохранение работника в базу
     all_workers[name] = worker
     fe.save_json(all_workers)
 
@@ -53,32 +57,37 @@ def del_contact():
     contact = find_contact() # tuple (name or id, contact, flag) 3 Элемента
     all_workers = fe.load_json()
     id_to_name = fe.load_json('data_files\id_to_name.json')
+    
     name = contact[0]
     worker = all_workers.get(name)  
-    # worker = [{'id_number': id_number, 'type_doc': type_doc,
-    #            'number_tel': number_tel, 'department': department,
-    #            'type_worker': type_worker, 'comment': comment}]  
     id = worker.get('id_number')
+    
     id_to_name.pop(f'{id}')
     all_workers.pop(f'{name}')
+    
     fe.save_json(id_to_name,'data_files\id_to_name.json')
     fe.save_json(all_workers)
+    
     print(f'Удалён: {contact}')
     
-
+# Функция изменения контакта: Контакт полностью перезаписывается и сохраняется как новый,
+# но сохраняя уникальный id. Старые данные полностью удаляются.
+# Из-за особенности работы со словарем изменение данных возможно, только при использовании ключа name,
+# Что не даёт изменить сам ключ name - Имя Фамилия
 def edit_contact():
     contact = find_contact()
     all_workers = fe.load_json()
     id_to_name = fe.load_json('data_files\id_to_name.json') 
     
+    # contact это кортеж, элемент[0] Содержит переменную name Имя работника
     name = contact[0]
     worker = all_workers.get(name)
-    new_name = input(f'Изменить: {name} : >> ')
-    type_doc = input(f'Изменить: {worker.get("type_doc")} : >> ')
-    number_tel = input(f'Изменить: {worker.get("number_tel")} : >> ')
-    department = input(f'Изменить: {worker.get("department")} : >> ')
-    type_worker = input(f'Изменить: {worker.get("type_worker")} : >> ')
-    comment = input(f'Изменить: {worker.get("comment")} : >> ')
+    new_name = input(f'Изменить Имя Фамилию: {name} : >> ')
+    type_doc = input(f'Изменить тип документа: {worker.get("type_doc")} : >> ')
+    number_tel = input(f'Изменить номер телефона: {worker.get("number_tel")} : >> ')
+    department = input(f'Изменить отдел: {worker.get("department")} : >> ')
+    type_worker = input(f'Изменить должность: {worker.get("type_worker")} : >> ')
+    comment = input(f'Изменить комментарий: {worker.get("comment")} : >> ')
     id_number = worker.get('id_number')
     
     new_worker = {'id_number': id_number, 'type_doc': type_doc,
@@ -91,40 +100,41 @@ def edit_contact():
     
     fe.save_json(all_workers)
     fe.save_json(id_to_name, 'data_files\id_to_name.json')
-    print(all_workers)
-    print(id_to_name)
+    print(f'Изменения внесены: {(new_name, worker)}')
     
-    
+# Поиск работника по id или Имя Фамилии
+# Возвращает кортеж из: Имени, данных работника, флага
 def find_contact():
     finder = init_find()
     if finder.isdigit():
         id_to_name = fe.load_json('data_files\id_to_name.json')
         name = id_to_name.get(finder)
         all_workers = fe.load_json()
-        
+        # Если в словаре отсутствует ключ name
         if name is None:
             print('Пользователь не найден')
-            if quit():
+            if stop_prog():
                 find_contact()
             else:
                 exit()
         else:
             flag = 1
             return (name, all_workers.get(name), flag)
-            # return f'{name} : {all_workers.get(name)}'
+            
         
     else:
         all_workers = fe.load_json()
+        
+        # Если в словаре отсутствует ключ id
         if all_workers.get(finder) is None:
             print('Пользователь не найден')
-            if quit():
+            if stop_prog():
                 find_contact()
             else:
                 exit()
         else:
             flag = 0
             return (finder, all_workers.get(finder), flag)
-            # return f'{finder} : {all_workers.get(finder)}'
         
         
 # Просто ввод отдельной функцией
@@ -138,8 +148,8 @@ def view_workers():
     for i in dict.keys():
         print(f'{i}: {dict.get(i)}')
         
-def quit():
-    print(('Продолжить поиск?\n'
+def stop_prog():
+    print(('Продолжить?\n'
            '"y" или "n"'))
     choice = input('>> ')
     if choice == "y":
@@ -147,4 +157,4 @@ def quit():
     elif choice == "n":
         return False
     else:
-        quit()
+        stop_prog()
