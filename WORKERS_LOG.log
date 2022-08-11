@@ -1,0 +1,40 @@
+DEBUG:root: 2022-08-11 22:06:41.150854: Запуск программы.
+DEBUG:root: 2022-08-11 22:06:41.150854: Ввод пользователем: 5
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\id_to_name.json complete!
+DEBUG:root: 2022-08-11 22:06:41.150854: Запуск программы.
+DEBUG:root: 2022-08-11 22:06:41.150854: Ввод пользователем: 1
+DEBUG:root: 2022-08-11 22:06:41.150854: add_contact: Добавление пользователя
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\id_workers.json complete!
+DEBUG:root:2022-08-11 22:06:41.150854: Save to data_files\id_workers.json complete!
+DEBUG:root: 2022-08-11 22:06:41.150854: Ввод данных ['Дмитрий Малышев', 'Паспорт', '8918135830', 'Проектирование', 'Главный инженер', 'Работает', 10]
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-11 22:06:41.150854: Save to data_files\id_to_name.json complete!
+INFO:root: 2022-08-11 22:06:41.150854 Сохранение данных: ['Дмитрий Малышев', 10] в data_files\id_to_name.json
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\table_workers.json complete!
+DEBUG:root:2022-08-11 22:06:41.150854: Save to data_files\table_workers.json complete!
+INFO:root: 2022-08-11 22:06:41.150854: Дабавление контакта: Дмитрий Малышев выполнено!
+DEBUG:root: 2022-08-11 22:06:41.150854: Запуск программы.
+DEBUG:root: 2022-08-11 22:06:41.150854: Ввод пользователем: 2
+DEBUG:root: 2022-08-11 22:06:41.150854: find_contact: поиск контакта.
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\table_workers.json complete!
+INFO:root: 2022-08-11 22:06:41.150854: Пользователь найден: id: 10, name: Дмитрий Малышев
+DEBUG:root: 2022-08-11 22:06:41.150854: Запуск программы.
+DEBUG:root: 2022-08-11 22:06:41.150854: Ввод пользователем: 5
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\id_to_name.json complete!
+DEBUG:root: 2022-08-11 22:06:41.150854: Запуск программы.
+DEBUG:root: 2022-08-11 22:06:41.150854: Ввод пользователем: 4
+DEBUG:root: 2022-08-11 22:06:41.150854: del_contact: удаление контакта.
+DEBUG:root: 2022-08-11 22:06:41.150854: find_contact: поиск контакта.
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\table_workers.json complete!
+INFO:root: 2022-08-11 22:06:41.150854: Пользователь найден: id: 8, name: Александр Петров
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\table_workers.json complete!
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\id_to_name.json complete!
+WARNING:root: 2022-08-11 22:06:41.150854: Удалён контакта: (8, 'Александр Петров')!
+DEBUG:root:2022-08-11 22:06:41.150854: Save to data_files\id_to_name.json complete!
+DEBUG:root:2022-08-11 22:06:41.150854: Save to data_files\table_workers.json complete!
+DEBUG:root: 2022-08-11 22:06:41.150854: Запуск программы.
+DEBUG:root: 2022-08-11 22:06:41.150854: Ввод пользователем: 5
+DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\id_to_name.json complete!
+DEBUG:root: 2022-08-11 22:06:41.150854: Завершение работы.
