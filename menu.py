@@ -1,4 +1,5 @@
 import json
+import math
 import id_number as id
 import files_editor as fe
 import logging as log
@@ -37,6 +38,7 @@ def menu_user():
         case '4': del_contact()
         case '5': view_workers() 
         case '6': exit()
+        
 # Добавление нового работника
 def add_contact():
     log.debug(f' {now}: add_contact: Добавление пользователя')
@@ -48,7 +50,8 @@ def add_contact():
     number_tel = input('Введите номер телефона >> ')
     department = input('Введите отдел >> ')
     type_worker = input('Введите должность >> ')
-    comment = input('Введите комментарий >> ')
+    comment = worker_status(init_status(),name)
+    
     id_number = id.set_id()
     
     log.debug(f' {now}: Ввод данных {[name, type_doc, number_tel, department, type_worker, comment, id_number]}')
@@ -71,9 +74,10 @@ def add_contact():
     
     log.info(f' {now}: Дабавление контакта: {name} выполнено!')
 
+
 def del_contact():
     log.debug(f' {now}: del_contact: удаление контакта.')
-    contact = find_contact() # tuple (name or id, contact, flag) 3 Элемента
+    contact = find_contact() # tuple (name or id, contact) 2 Элемента
     if contact != False:
         all_workers = fe.load_json()
         id_to_name = fe.load_json('data_files\id_to_name.json')
@@ -84,7 +88,7 @@ def del_contact():
         
         id_to_name.pop(f'{id}')
         all_workers.pop(f'{name}')
-        log.warning(f' {now}: Удалён контакта: {id, name}!')
+        log.warning(f' {now}: Удалён контакт: {id, name}!')
         
         fe.save_json(id_to_name,'data_files\id_to_name.json')
         fe.save_json(all_workers)
@@ -92,6 +96,8 @@ def del_contact():
         print(f'Удалён: {contact}')
     else:
         print('Поиск завершен.')
+        
+        
 # Функция изменения контакта: Контакт полностью перезаписывается и сохраняется как новый,
 # но сохраняя уникальный id. Старые данные полностью удаляются.
 # Из-за особенности работы со словарем изменение данных возможно, только при использовании ключа name,
@@ -112,7 +118,7 @@ def edit_contact():
         number_tel = input(f'Изменить номер телефона: {worker.get("number_tel")} : >> ')
         department = input(f'Изменить отдел: {worker.get("department")} : >> ')
         type_worker = input(f'Изменить должность: {worker.get("type_worker")} : >> ')
-        comment = input(f'Изменить комментарий: {worker.get("comment")} : >> ')
+        comment = edit_worker_status(name, new_name)
         id_number = worker.get('id_number')
         
         new_worker = {'id_number': id_number, 'type_doc': type_doc,
@@ -127,9 +133,11 @@ def edit_contact():
         fe.save_json(id_to_name, 'data_files\id_to_name.json')
         
         log.warning(f' {now}: изменение данных id: {id_number} name: {name} внесены.')
-        print(f'Изменения внесены: {(new_name, worker)}')
+        print(f'Изменения внесены: {(new_name, new_worker)}')
     else:
         print('Поиск завершен!')
+        
+        
 # Поиск работника по id или Имя Фамилии
 # Возвращает кортеж из: Имени, данных работника, флага
 def find_contact():
@@ -160,6 +168,7 @@ def find_contact():
             quit_status = False
             return False
         
+        
 # Просто ввод отдельной функцией
 def init_find():
     print('Введите Имя Фамилию или "id"')
@@ -182,3 +191,52 @@ def stop_prog(text):
         return False
     else:
         stop_prog(text)
+        
+        
+def edit_worker_status(name, new_name):
+    all_workers = fe.load_json()
+    worker = all_workers.get(name)
+    
+    print(f'Изменить комментарий: {worker.get("comment")} : >> ')
+    
+    job_status = init_status()
+    statuses = fe.load_json('data_files\worker_status.json')
+    
+    for key in statuses:
+        lst = statuses.get(key)
+        if name in lst:
+            lst.remove(name)
+            transfer = statuses.get(job_status)
+            transfer.append(new_name)
+            statuses[job_status] = transfer
+            fe.save_json(statuses,'data_files\worker_status.json')
+            break
+    return job_status
+        
+        
+def worker_status(job_status,name):
+    stats = fe.load_json('data_files\worker_status.json')
+    stats[job_status].append(name)
+    fe.save_json(stats,'data_files\worker_status.json')
+    return job_status
+    
+def init_status():
+    status = input('Выберите статус работника.\n'
+                    '1. Больничный.\n'
+                    '2. Отпуск.\n'
+                    '3. Работает.\n'
+                    '>> ')
+    flag = True
+    while flag != False:
+        if status == "1": 
+            flag = False
+            return "hospital"
+        elif status == "2": 
+            flag = False
+            return "vacation"
+        elif status == "3": 
+            flag = False
+            return "works"
+        else:
+            print('Неккоректный ввод. \n'
+                  'Повторите!')
