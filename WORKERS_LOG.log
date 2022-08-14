@@ -38,3 +38,181 @@ DEBUG:root: 2022-08-11 22:06:41.150854: Запуск программы.
 DEBUG:root: 2022-08-11 22:06:41.150854: Ввод пользователем: 5
 DEBUG:root:2022-08-11 22:06:41.150854: Load from data_files\id_to_name.json complete!
 DEBUG:root: 2022-08-11 22:06:41.150854: Завершение работы.
+DEBUG:root: 2022-08-12 23:49:25.971237: Запуск программы.
+DEBUG:root: 2022-08-12 23:49:25.971237: Ввод пользователем: 7
+DEBUG:root: 2022-08-12 23:49:25.971237: Завершение работы.
+DEBUG:root: 2022-08-12 23:49:35.854063: Запуск программы.
+DEBUG:root: 2022-08-12 23:49:35.854063: Ввод пользователем: 10
+DEBUG:root: 2022-08-12 23:49:35.854063: Запуск программы.
+DEBUG:root: 2022-08-12 23:49:35.854063: Ввод пользователем: 9
+DEBUG:root: 2022-08-12 23:49:35.854063: Завершение работы.
+DEBUG:root: 2022-08-13 12:06:18.268975: Запуск программы.
+DEBUG:root: 2022-08-13 12:06:18.268975: Ввод пользователем: 1
+DEBUG:root: 2022-08-13 12:06:18.268975: add_contact: Добавление пользователя
+DEBUG:root:2022-08-13 12:06:18.268975: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:06:18.268975: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:06:18.268975: Save to data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:06:18.268975: Load from data_files\id_workers.json complete!
+DEBUG:root:2022-08-13 12:06:18.268975: Save to data_files\id_workers.json complete!
+DEBUG:root: 2022-08-13 12:06:18.268975: Ввод данных ['Сергей Орлов', 'Паспорт', '8917805393', 'Управление', 'Мл. менеджер', 'vacation', 11]
+DEBUG:root:2022-08-13 12:06:18.268975: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-13 12:06:18.268975: Save to data_files\id_to_name.json complete!
+INFO:root: 2022-08-13 12:06:18.268975 Сохранение данных: ['Сергей Орлов', 11] в data_files\id_to_name.json
+DEBUG:root:2022-08-13 12:06:18.268975: Load from data_files\table_workers.json complete!
+DEBUG:root:2022-08-13 12:06:18.268975: Save to data_files\table_workers.json complete!
+INFO:root: 2022-08-13 12:06:18.268975: Дабавление контакта: Сергей Орлов выполнено!
+DEBUG:root: 2022-08-13 12:06:18.268975: Завершение работы.
+DEBUG:root: 2022-08-13 12:07:31.358594: Запуск программы.
+DEBUG:root: 2022-08-13 12:07:31.358594: Ввод пользователем: 2
+DEBUG:root: 2022-08-13 12:07:31.358594: find_contact: поиск контакта.
+DEBUG:root:2022-08-13 12:07:31.358594: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-13 12:07:31.358594: Load from data_files\table_workers.json complete!
+INFO:root: 2022-08-13 12:07:31.358594: Пользователь найден: id: 11, name: Сергей Орлов
+DEBUG:root: 2022-08-13 12:07:31.358594: Завершение работы.
+DEBUG:root:2022-08-13 12:10:25.436299: Load from data_files\worker_status.json complete!
+DEBUG:root: 2022-08-13 12:10:41.961056: Запуск программы.
+DEBUG:root: 2022-08-13 12:10:41.961056: Ввод пользователем: 3
+DEBUG:root: 2022-08-13 12:10:41.961056: edit_contact: изменение контакта.
+DEBUG:root: 2022-08-13 12:10:41.961056: find_contact: поиск контакта.
+DEBUG:root:2022-08-13 12:10:41.961056: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-13 12:10:41.961056: Load from data_files\table_workers.json complete!
+INFO:root: 2022-08-13 12:10:41.961056: Пользователь найден: id: 9, name: Марина Лебедева
+DEBUG:root:2022-08-13 12:10:41.961056: Load from data_files\table_workers.json complete!
+DEBUG:root:2022-08-13 12:10:41.961056: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-13 12:10:41.961056: Save to data_files\table_workers.json complete!
+DEBUG:root:2022-08-13 12:10:41.961056: Save to data_files\id_to_name.json complete!
+WARNING:root: 2022-08-13 12:10:41.961056: изменение данных id: 9 name: Марина Лебедева внесены.
+DEBUG:root: 2022-08-13 12:10:41.961056: Запуск программы.
+DEBUG:root: 2022-08-13 12:10:41.961056: Ввод пользователем: 2
+DEBUG:root: 2022-08-13 12:10:41.961056: find_contact: поиск контакта.
+DEBUG:root:2022-08-13 12:10:41.961056: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-13 12:10:41.961056: Load from data_files\table_workers.json complete!
+INFO:root: 2022-08-13 12:10:41.961056: Пользователь найден: id: 9, name: Марина Лебедева
+DEBUG:root: 2022-08-13 12:10:41.961056: Завершение работы.
+DEBUG:root: 2022-08-13 12:12:08.071094: Запуск программы.
+DEBUG:root: 2022-08-13 12:12:08.071094: Ввод пользователем: 1
+DEBUG:root: 2022-08-13 12:12:08.071094: add_contact: Добавление пользователя
+DEBUG:root:2022-08-13 12:12:08.070093: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:12:08.070093: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:12:08.070093: Save to data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:12:08.070093: Load from data_files\id_workers.json complete!
+DEBUG:root:2022-08-13 12:12:08.070093: Save to data_files\id_workers.json complete!
+DEBUG:root: 2022-08-13 12:12:08.071094: Ввод данных ['Петр Первый', 'Грамота', '8918503485', 'Управление', 'Император', 'vacation', 12]
+DEBUG:root:2022-08-13 12:12:08.070093: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-13 12:12:08.070093: Save to data_files\id_to_name.json complete!
+INFO:root: 2022-08-13 12:12:08.071094 Сохранение данных: ['Петр Первый', 12] в data_files\id_to_name.json
+DEBUG:root:2022-08-13 12:12:08.070093: Load from data_files\table_workers.json complete!
+DEBUG:root:2022-08-13 12:12:08.070093: Save to data_files\table_workers.json complete!
+INFO:root: 2022-08-13 12:12:08.071094: Дабавление контакта: Петр Первый выполнено!
+DEBUG:root: 2022-08-13 12:12:08.071094: Запуск программы.
+DEBUG:root: 2022-08-13 12:12:08.071094: Ввод пользователем: 6
+DEBUG:root:2022-08-13 12:13:14.114023: Load from data_files\worker_status.json complete!
+DEBUG:root: 2022-08-13 12:14:16.298694: Запуск программы.
+DEBUG:root: 2022-08-13 12:14:16.298694: Ввод пользователем: 1
+DEBUG:root: 2022-08-13 12:14:16.298694: add_contact: Добавление пользователя
+DEBUG:root:2022-08-13 12:14:16.298694: Load from data_files\worker_status.json complete!
+DEBUG:root: 2022-08-13 12:14:34.205090: Запуск программы.
+DEBUG:root: 2022-08-13 12:14:34.205090: Ввод пользователем: 1
+DEBUG:root: 2022-08-13 12:14:34.205090: add_contact: Добавление пользователя
+DEBUG:root:2022-08-13 12:14:34.205090: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:14:34.205090: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:14:34.205090: Save to data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:14:34.205090: Load from data_files\id_workers.json complete!
+DEBUG:root:2022-08-13 12:14:34.205090: Save to data_files\id_workers.json complete!
+DEBUG:root: 2022-08-13 12:14:34.205090: Ввод данных ['Николай Петров', 'Паспорт', '8915838482', 'Строительный', 'Электрик', 'works', 13]
+DEBUG:root:2022-08-13 12:14:34.205090: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-13 12:14:34.205090: Save to data_files\id_to_name.json complete!
+INFO:root: 2022-08-13 12:14:34.205090 Сохранение данных: ['Николай Петров', 13] в data_files\id_to_name.json
+DEBUG:root:2022-08-13 12:14:34.205090: Load from data_files\table_workers.json complete!
+DEBUG:root:2022-08-13 12:14:34.205090: Save to data_files\table_workers.json complete!
+INFO:root: 2022-08-13 12:14:34.205090: Дабавление контакта: Николай Петров выполнено!
+DEBUG:root: 2022-08-13 12:14:34.205090: Завершение работы.
+DEBUG:root: 2022-08-13 12:15:14.481364: Запуск программы.
+DEBUG:root: 2022-08-13 12:15:14.481364: Ввод пользователем: 1
+DEBUG:root: 2022-08-13 12:15:14.481364: add_contact: Добавление пользователя
+DEBUG:root:2022-08-13 12:15:14.481364: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:15:14.481364: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:15:14.481364: Save to data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 12:15:14.481364: Load from data_files\id_workers.json complete!
+DEBUG:root:2022-08-13 12:15:14.481364: Save to data_files\id_workers.json complete!
+DEBUG:root: 2022-08-13 12:15:14.481364: Ввод данных ['Ольга Николаева', 'Паспорт', '892484835935', 'Общепит', 'Повар', 'works', 14]
+DEBUG:root:2022-08-13 12:15:14.481364: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-13 12:15:14.481364: Save to data_files\id_to_name.json complete!
+INFO:root: 2022-08-13 12:15:14.481364 Сохранение данных: ['Ольга Николаева', 14] в data_files\id_to_name.json
+DEBUG:root:2022-08-13 12:15:14.481364: Load from data_files\table_workers.json complete!
+DEBUG:root:2022-08-13 12:15:14.481364: Save to data_files\table_workers.json complete!
+INFO:root: 2022-08-13 12:15:14.481364: Дабавление контакта: Ольга Николаева выполнено!
+DEBUG:root: 2022-08-13 12:15:14.481364: Завершение работы.
+DEBUG:root:2022-08-13 12:16:15.906591: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:31:09.645857: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:32:43.444261: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:39:27.412379: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:40:17.259146: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:40:57.007344: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:41:46.583218: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:42:25.547543: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:43:06.781969: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:43:24.754688: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:48:05.498333: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:48:22.447252: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:48:54.947923: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:49:23.887615: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:52:27.598745: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:52:27.598745: Save to data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:53:00.830729: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:53:00.830729: Save to data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:53:23.442053: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:53:23.442053: Save to data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:53:23.442053: Save to data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:54:15.441064: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:54:15.441064: Save to data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:54:25.988078: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-13 13:54:25.988078: Save to data_files\worker_status.json complete!
+DEBUG:root: 2022-08-14 11:27:06.982045: Запуск программы.
+DEBUG:root: 2022-08-14 11:27:06.982045: Ввод пользователем: 2
+DEBUG:root: 2022-08-14 11:27:06.982045: find_contact: поиск контакта.
+DEBUG:root:2022-08-14 11:27:06.982045: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-14 11:27:06.982045: Load from data_files\table_workers.json complete!
+INFO:root: 2022-08-14 11:27:06.982045: Пользователь найден: name: Ольга Николаева
+DEBUG:root: 2022-08-14 11:27:06.982045: Запуск программы.
+DEBUG:root: 2022-08-14 11:27:06.982045: Ввод пользователем: 3
+DEBUG:root: 2022-08-14 11:27:06.982045: edit_contact: изменение контакта.
+DEBUG:root: 2022-08-14 11:27:06.982045: find_contact: поиск контакта.
+DEBUG:root:2022-08-14 11:27:06.982045: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-14 11:27:06.982045: Load from data_files\table_workers.json complete!
+INFO:root: 2022-08-14 11:27:06.982045: Пользователь найден: id: 14, name: Ольга Николаева
+DEBUG:root:2022-08-14 11:27:06.982045: Load from data_files\table_workers.json complete!
+DEBUG:root:2022-08-14 11:27:06.982045: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-14 11:27:06.982045: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-14 11:27:06.982045: Save to data_files\worker_status.json complete!
+DEBUG:root: 2022-08-14 11:43:08.813182: Запуск программы.
+DEBUG:root: 2022-08-14 11:43:08.813182: Ввод пользователем: 5
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\id_to_name.json complete!
+DEBUG:root: 2022-08-14 11:43:08.813182: Запуск программы.
+DEBUG:root: 2022-08-14 11:43:08.813182: Ввод пользователем: 2
+DEBUG:root: 2022-08-14 11:43:08.813182: find_contact: поиск контакта.
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\table_workers.json complete!
+INFO:root: 2022-08-14 11:43:08.813182: Пользователь найден: id: 14, name: Ольга Николаева
+DEBUG:root: 2022-08-14 11:43:08.813182: Запуск программы.
+DEBUG:root: 2022-08-14 11:43:08.813182: Ввод пользователем: 3
+DEBUG:root: 2022-08-14 11:43:08.813182: edit_contact: изменение контакта.
+DEBUG:root: 2022-08-14 11:43:08.813182: find_contact: поиск контакта.
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\table_workers.json complete!
+INFO:root: 2022-08-14 11:43:08.813182: Пользователь найден: id: 14, name: Ольга Николаева
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\table_workers.json complete!
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\table_workers.json complete!
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\worker_status.json complete!
+DEBUG:root:2022-08-14 11:43:08.813182: Save to data_files\worker_status.json complete!
+DEBUG:root:2022-08-14 11:43:08.813182: Save to data_files\table_workers.json complete!
+DEBUG:root:2022-08-14 11:43:08.813182: Save to data_files\id_to_name.json complete!
+WARNING:root: 2022-08-14 11:43:08.813182: изменение данных id: 14 name: Ольга Николаева внесены.
+DEBUG:root: 2022-08-14 11:43:08.813182: Запуск программы.
+DEBUG:root: 2022-08-14 11:43:08.813182: Ввод пользователем: 2
+DEBUG:root: 2022-08-14 11:43:08.813182: find_contact: поиск контакта.
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\id_to_name.json complete!
+DEBUG:root:2022-08-14 11:43:08.813182: Load from data_files\table_workers.json complete!
+INFO:root: 2022-08-14 11:43:08.813182: Пользователь найден: id: 14, name: Ольга Николаева
+DEBUG:root: 2022-08-14 11:43:08.813182: Завершение работы.
